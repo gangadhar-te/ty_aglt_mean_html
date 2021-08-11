@@ -1,0 +1,11 @@
+*{
+    font-family:cursive ;
+}
+.red-back{
+    background-color: red;
+}
+
+#first-div{
+    background-color: violet;
+    font-family: 'Times New Roman', Times, serif;
+}

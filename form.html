@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./form.css">
+</head>
+<body>
+    <form action="./block_inline.html" method="GET" target="blank">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required placeholder="Enter your name"
+        minlength="3" maxlength="10" > <br><br>
+
+        <label for="dob">DOB:</label>
+        <input type="date" id="dob"> <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email"><br><br>
+
+        <label >Gender:</label>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Other <br><br>
+
+        <label for="location">Select the prefered locations:</label> <br>
+        <input type="checkbox" name="location"> Bangalore <br>
+        <input type="checkbox" name="location"> Mumbai   <br>
+        <input type="checkbox" name="location"> Hyderabad <br>
+        <input type="checkbox" name="location"> Pune <br><br>
+
+        <label for="state">Choose your state:</label>
+        <select name="state" >
+            <option > --select--</option>
+            <option >Karnataka</option>
+            <option >Andhra pradesh</option>
+            <option >Maharashtra</option>
+            <option >UP</option>
+        </select> <br><br>
+        <input type="submit" value="Submit">
+        
+    </form>
+</body>
+</html>

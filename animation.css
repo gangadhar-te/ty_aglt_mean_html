@@ -1,0 +1,58 @@
+@keyframes myAnim {
+    20%{
+        background-color: teal;
+        width: 20%;
+    }
+    40%{
+        background-color: tomato;
+        width: 40%;
+    }
+    60%{
+        background-color: yellow;
+        width: 60%;
+    }
+    80%{
+        background-color: midnightblue;
+        width: 80%;
+    }
+    100%{
+        background-color: orchid;
+        width: 100%;
+    }
+}
+
+.demo{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    animation-name: myAnim;
+    animation-duration: 15s;
+}
+
+.demo:hover{
+    width: 600px;
+    transition-duration: 10s;
+    /* transform: rotate(360deg); */
+    /* transform: scale(1,1.8); */
+    transform: skew(180deg);
+}
+
+table{
+    margin:0 auto;
+    border: 1px solid black;
+}
+tr,td,th{
+    border: 1px solid blue;
+}
+tbody tr:nth-child(2){
+    background-color: red;
+}
+tbody tr:nth-child(odd){
+    background-color: green;
+}
+
+h1::after{
+    content: "Prabhanjan Deshpande";
+    background-color: greenyellow;
+    
+}
