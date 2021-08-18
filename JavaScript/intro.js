@@ -77,12 +77,12 @@
 // console.log(Math.abs(decimal));
 // console.log(Math.sqrt(decimal));
 
-var x = 12;
-x++;
-console.log(x);
+// var x = 12;
+// x++;
+// console.log(x);
 
-var y = x + 10;
-console.log(y);
+// var y = x + 10;
+// console.log(y);
 // var z = x + y;
 // console.log(z);
 
@@ -129,12 +129,13 @@ console.log(y);
 // var a = 23;
 // var b = 34;
 
-//Named function
-// function add(a,b){
-//    var x = a+b;
-// //    console.log(x); 
+// Named function
+function add(a,b){
+   var x = a+b;
+   console.log(x); 
 //    return x;
-// };
+};
+add(5,46);
 
 // var result = add(67,34);
 // console.log('the sum of two no is' ,result);
