@@ -1,0 +1,43 @@
+<!-- Directives
+1.Component Directive
+2.Structural directives => *ngFor,*ngIf,*ngSwitch
+3.Attribute Directives => ngStyle,ngClass -->
+<div *ngIf = "success_msg; else error_msg" class="bg-primary">
+user added successfully
+</div>
+<ng-template #error_msg>
+  User was not found
+</ng-template>
+
+<!-- <ul>
+  <li *ngFor = "let emp of employees;index as i; first as f;last as l">
+<div *ngIf = "f">this is first record</div>
+<div>
+   Employee is {{ emp.firstName }} {{ emp.lastName }} with id {{ emp.id }}
+</div>
+<div *ngIf = "l">this is last record</div>
+</li>
+</ul> -->
+
+<ul>
+  <li *ngFor = "let emp of employees;even as e;odd as o">
+<div *ngIf ="e" class="bg-warning">Employee is {{ emp.firstName }} {{ emp.lastName }} with id {{ emp.id }}</div>
+
+<div *ngIf ="o" class="bg-secondary">Employee is {{ emp.firstName }} {{ emp.lastName }} with id {{ emp.id }}</div>
+</li>
+</ul>
+
+<div [ngStyle]= "{'background-color':'green', 'color':'white'}">This is example for ngStyle</div>
+<div [ngStyle]= "{'background-color': styleProp}">This i a dynamic example</div>
+<br><br>
+<div>Add 45 and 67</div>
+<input type="text" [(ngModel)] = "sum">
+<button (click) = "addition()">Submit</button>
+<div *ngIf = "correct" [ngStyle]= "{'background-color': back,'color':'white'}">Your answer was correct</div>
+<div *ngIf = "wrong" [ngStyle]= "{'background-color': back,'color':'white'}">You answered wrong</div>
+<br>
+<br>
+
+<div [ngClass]= "'c1'">This is a ngClass example</div>
+<div [ngClass]= "'c1 c2'">This is a ngClass multiple class example</div>
+<div [ngClass]= "styleClsProp === 'c3'? 'c3':'c1'">This is a ngClass example</div>

@@ -1,0 +1,30 @@
+<!-- Data binding -->
+<!-- 1.One way data binding
+-Interpolation => {{  }}
+-Property binding => []
+-Event binding => ()
+2.Two way data binding => [(ngModel)] -->
+
+
+<h1> {{ title }} </h1>
+<h3>Your reg no is {{ numbers }}</h3>
+
+<div>Employee is {{ obj.name }}</div>
+<div>Employee age is {{ obj.age }}</div>
+<div>Employee place is {{ obj.place }}</div>
+<br>
+<br>
+<div [innerText]= "text"></div>
+<br>
+<a [href]="href">FaceBook</a>
+<img [src]="path" height="100px" width="100px" >
+<br>
+<button (click) = showAlert() class="btn btn-outline-success">Click me</button><br>
+<button (click) = increaseReg() class="btn btn-outline-primary">Inc number</button>
+<button (click) = decreaseReg() class="btn btn-outline-warning">Dec number</button>
+<br>
+<br>
+<input type="text" [(ngModel)]= "firstName">
+<h5>{{ firstName }}</h5>
+
+
