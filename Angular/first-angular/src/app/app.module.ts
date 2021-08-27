@@ -8,11 +8,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { GalleryComponent } from './gallery/gallery.component';
 import { FormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
+import { HoverDirective } from './hover.directive';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 let routes:Routes = [
   {path:'data-binding',component:DataBindingComponent},
   {path:'gallery',component:GalleryComponent},
-  {path:'directives',component:DirectivesComponent}
+  {path:'directives',component:DirectivesComponent},
+  {path:'parent',component:ParentComponent},
+  {path:'child',component:ChildComponent}
 
 ]
 
@@ -22,7 +27,10 @@ let routes:Routes = [
     SampleComponent,
     DataBindingComponent,
     GalleryComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    HoverDirective,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
