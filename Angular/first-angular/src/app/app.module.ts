@@ -11,14 +11,15 @@ import { DirectivesComponent } from './directives/directives.component';
 import { HoverDirective } from './hover.directive';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 let routes:Routes = [
   {path:'data-binding',component:DataBindingComponent},
   {path:'gallery',component:GalleryComponent},
   {path:'directives',component:DirectivesComponent},
   {path:'parent',component:ParentComponent},
-  {path:'child',component:ChildComponent}
-
+  {path:'child',component:ChildComponent},
+  {path:'template',component:TemplateFormComponent}
 ]
 
 @NgModule({
@@ -30,7 +31,8 @@ let routes:Routes = [
     DirectivesComponent,
     HoverDirective,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,
