@@ -4,6 +4,7 @@ import {
   FormControl,
   FormBuilder,
   Validators,
+  FormArray,
 } from '@angular/forms';
 
 @Component({
@@ -26,22 +27,49 @@ export class ReactiveFormComponent implements OnInit {
       ],
       password: ['', Validators.required],
       terms: ['', Validators.requiredTrue],
+      items : this.formBuilder.array([
+       this.formBuilder.group({
+        itemId: ['1'],
+        itemName: ['mobile'],
+        itemDesc: ['good mobile']
+       })
+      ])
     });
   }
 
   ngOnInit(): void {
-    this.checkInForm.patchValue({
-      emailAddr: 'test@test.com',
-      password: 100,
-    });
+    // this.checkInForm.patchValue({
+    //   emailAddr: 'test@test.com',
+    //   password: 100,
+    // });
+
+
+
   }
 
   postData() {
     console.log(this.checkInForm);
     console.log(this.checkInForm.value);
+    console.log(this.checkInForm.get('items').value);
   }
 
   resetForm(){
     this.checkInForm.reset()
   }
+
+ get items(){
+   return this.checkInForm.get('items') as FormArray
+ }
+
+  addNewItem(){
+   const itemLength = this.items.length;
+   const newItem = this.formBuilder.group({
+    itemId: [itemLength + 1],
+    itemName: [''],
+    itemDesc: ['']
+   });
+
+   this.items.push(newItem)
+  }
+
 }
