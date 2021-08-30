@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GalleryComponent } from './gallery/gallery.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { HoverDirective } from './hover.directive';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 let routes:Routes = [
   {path:'data-binding',component:DataBindingComponent},
@@ -19,7 +20,9 @@ let routes:Routes = [
   {path:'directives',component:DirectivesComponent},
   {path:'parent',component:ParentComponent},
   {path:'child',component:ChildComponent},
-  {path:'template',component:TemplateFormComponent}
+  {path:'template',component:TemplateFormComponent},
+  {path:'reactive',component:ReactiveFormComponent}
+
 ]
 
 @NgModule({
@@ -32,12 +35,14 @@ let routes:Routes = [
     HoverDirective,
     ParentComponent,
     ChildComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
