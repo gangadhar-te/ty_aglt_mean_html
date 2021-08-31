@@ -13,6 +13,10 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { BuiltInPipeComponent } from './built-in-pipe/built-in-pipe.component';
+import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
+import { MarkPipe } from './mark.pipe';
+import { CustomersComponent } from './customers/customers.component';
 
 let routes:Routes = [
   {path:'data-binding',component:DataBindingComponent},
@@ -21,7 +25,10 @@ let routes:Routes = [
   {path:'parent',component:ParentComponent},
   {path:'child',component:ChildComponent},
   {path:'template',component:TemplateFormComponent},
-  {path:'reactive',component:ReactiveFormComponent}
+  {path:'reactive',component:ReactiveFormComponent},
+  {path:'built-in',component:BuiltInPipeComponent},
+  {path:'custom',component:CustomPipeComponent},
+  {path:'customers',component:CustomersComponent}
 
 ]
 
@@ -36,7 +43,11 @@ let routes:Routes = [
     ParentComponent,
     ChildComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    BuiltInPipeComponent,
+    CustomPipeComponent,
+    MarkPipe,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,

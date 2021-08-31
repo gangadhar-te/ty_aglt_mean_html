@@ -1,0 +1,7 @@
+<h4>List of contacts</h4>
+<ul>
+  <li *ngFor = "let contact of contacts">
+    {{ contact.contactName }}
+  </li>
+</ul>
+<button (click) = "ds.callFromTemplate()">Call method</button>

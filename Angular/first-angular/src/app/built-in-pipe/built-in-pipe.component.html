@@ -1,0 +1,14 @@
+
+<h4>Built-In-Pipes</h4>
+<div>
+  {{ user.firstName | lowercase }} {{ user.lastName | uppercase }}
+</div>
+<div>
+  {{ user.DOB | date:'M/d/yy, h:mm a'  }}
+</div>
+<div>
+  {{ user.salary | currency:'KRW' }}
+</div>
+<div>
+  {{ user | json }}
+</div>

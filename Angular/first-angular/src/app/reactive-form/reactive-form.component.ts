@@ -21,7 +21,7 @@ export class ReactiveFormComponent implements OnInit {
         [
           Validators.required,
           Validators.email,
-          Validators.minLength(3),
+          Validators.minLength(5),
           Validators.maxLength(20),
         ],
       ],
