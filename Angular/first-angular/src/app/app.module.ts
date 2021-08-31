@@ -17,6 +17,7 @@ import { BuiltInPipeComponent } from './built-in-pipe/built-in-pipe.component';
 import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
 import { MarkPipe } from './mark.pipe';
 import { CustomersComponent } from './customers/customers.component';
+import { ObservableComponent } from './observable/observable.component';
 
 let routes:Routes = [
   {path:'data-binding',component:DataBindingComponent},
@@ -28,7 +29,9 @@ let routes:Routes = [
   {path:'reactive',component:ReactiveFormComponent},
   {path:'built-in',component:BuiltInPipeComponent},
   {path:'custom',component:CustomPipeComponent},
-  {path:'customers',component:CustomersComponent}
+  {path:'customers',component:CustomersComponent},
+  {path:'observable',component:ObservableComponent}
+
 
 ]
 
@@ -47,7 +50,8 @@ let routes:Routes = [
     BuiltInPipeComponent,
     CustomPipeComponent,
     MarkPipe,
-    CustomersComponent
+    CustomersComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,
