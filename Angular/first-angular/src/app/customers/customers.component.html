@@ -1,7 +1,30 @@
 <h4>List of contacts</h4>
 <ul>
   <li *ngFor = "let contact of contacts">
-    {{ contact.contactName }}
+    {{ contact.id }}  {{ contact.firstName }} {{ contact.lastName }}
   </li>
 </ul>
-<button (click) = "ds.callFromTemplate()">Call method</button>
+<!-- <div *ngIf ="msgTrue">Contact updated successfully</div>
+
+<div class="container mt-4">
+  <form #contactsForm = "ngForm" (ngSubmit) = "addNewContact(contactsForm)">
+    <div class="mb-3">
+      <label for="id" class="form-label">Contact Id</label>
+      <input type="id" class="form-control" id="id" name="id" ngModel  #idField = "ngModel" >
+      </div>
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name </label>
+      <input type="firstName" class="form-control" id="firstName" name="firstName" ngModel >
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name </label>
+      <input type="lastName" class="form-control" id="lastName" name="lastName" ngModel >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Contact</button>
+  </form>
+</div> -->
+
+<!-- <button (click) = "updateContact(9)">Update contact id:9</button> -->
+Enter the id of contact to be deleted<input type="text" [(ngModel)] = "idStorage">
+<button (click) = "removeContact()">Delete</button>

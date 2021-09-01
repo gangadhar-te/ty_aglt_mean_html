@@ -1,26 +1,28 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getContacts(){
-    //code to fetch data from backend
-    const contactList = [
-      {contactId:1, contactName: 'Gangadhar'},
-      {contactId:2, contactName: 'Mamta'},
-      {contactId:3, contactName: 'Prabhanjan'},
-      {contactId:4, contactName: 'Rajee'},
-      {contactId:5, contactName: 'Gurunath'}
-    ];
-    return contactList;
+  return this.http.get('http://localhost:3000/contacts')
   }
 
-  callFromTemplate(){
-    console.log('Calling from Template directly');
+  createContact(createBody){
+   return this.http.post('http://localhost:3000/contacts',createBody)
+  }
 
+  updateContact(contactId,updateBody){
+    const endPoint = 'http://localhost:3000/contacts/' + contactId
+    return this.http.put(endPoint,updateBody)
+  }
+
+  deleteContact(contactId){
+    const endPoint = 'http://localhost:3000/contacts/' + contactId
+    return this.http.delete(endPoint);
   }
 }
