@@ -33,7 +33,6 @@ let routes:Routes = [
   {path:'customers',component:CustomersComponent},
   {path:'observable',component:ObservableComponent}
 
-
 ]
 
 @NgModule({

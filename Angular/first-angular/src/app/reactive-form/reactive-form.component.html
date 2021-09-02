@@ -12,6 +12,8 @@
         <span *ngIf= " checkInForm.get('emailAddr').touched && checkInForm.get('emailAddr').hasError('email')">
          Enter valid email address
         </span>
+        <span *ngIf= " checkInForm.get('emailAddr').touched && checkInForm.get('emailAddr').hasError('minlength')">minimum length should be 5 characters</span>
+        <span *ngIf= " checkInForm.get('emailAddr').touched && checkInForm.get('emailAddr').hasError('maxlength')">max length should be 5 characters</span>
       </div>
     </div>
     <div class="form-group row">
@@ -34,7 +36,7 @@
       </div>
     </div>
 
-    <div class="form-group row">
+    <!-- <div class="form-group row">
       <label for="" class="col-sm-2 col-form-label">Items</label>
       <div class="col-sm-10" formArrayName = "items">
         <div *ngFor = "let item of checkInForm.controls.items['controls'];let i=index" [formGroupName]="i">
@@ -46,7 +48,7 @@
         <br><br>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="form-group row">
       <div class="col-sm-10">
@@ -54,8 +56,8 @@
         >Sign in</button>
         <button type="reset" class="btn btn-outline-success"
         (click) = "resetForm()">Clear</button>
-        <button type="submit" class="btn btn-outline-secondary"
-        (click) = "addNewItem()">Add item</button>
+        <!-- <button type="submit" class="btn btn-outline-secondary"
+        (click) = "addNewItem()">Add item</button> -->
       </div>
     </div>
   </form>

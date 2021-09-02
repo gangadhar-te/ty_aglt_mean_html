@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="row">
+    <div class="col-md-3" *ngFor = "let product of products">
+      <div class="card">
+        <img
+        [src]="product.productImageURL"
+        [alt]="product.productName"
+        height="150px"
+        width="100%">
+        <div class="card-body">
+         <div>{{ product.productName }}</div>
+         <div>{{ product.productPrice }}</div>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-warning">Delete</button>
+          <button class="btn btn-primary">Edit</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

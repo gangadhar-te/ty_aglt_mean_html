@@ -6,12 +6,11 @@ import { Component, DoCheck, OnChanges, OnDestroy, OnInit } from '@angular/core'
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit,OnDestroy,OnChanges,DoCheck {
-  // userLoggedIn = false;
+  userLoggedIn = true;
   isChild = false;
   parentVariable = '';
   constructor() {
     console.log('Parent Constructor is called');
-
   }
 
   ngOnInit(): void {

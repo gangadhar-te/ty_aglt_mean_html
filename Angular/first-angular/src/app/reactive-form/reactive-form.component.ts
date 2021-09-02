@@ -22,18 +22,18 @@ export class ReactiveFormComponent implements OnInit {
           Validators.required,
           Validators.email,
           Validators.minLength(5),
-          Validators.maxLength(20),
+          Validators.maxLength(10),
         ],
       ],
       password: ['', Validators.required],
       terms: ['', Validators.requiredTrue],
-      items : this.formBuilder.array([
-       this.formBuilder.group({
-        itemId: ['1'],
-        itemName: ['mobile'],
-        itemDesc: ['good mobile']
-       })
-      ])
+      // items : this.formBuilder.array([
+      //  this.formBuilder.group({
+      //   itemId: ['1'],
+      //   itemName: ['mobile'],
+      //   itemDesc: ['good mobile']
+      //  })
+      // ])
     });
   }
 
@@ -50,7 +50,7 @@ export class ReactiveFormComponent implements OnInit {
   postData() {
     console.log(this.checkInForm);
     console.log(this.checkInForm.value);
-    console.log(this.checkInForm.get('items').value);
+    // console.log(this.checkInForm.get('items').value);
   }
 
   resetForm(){
@@ -61,15 +61,15 @@ export class ReactiveFormComponent implements OnInit {
    return this.checkInForm.get('items') as FormArray
  }
 
-  addNewItem(){
-   const itemLength = this.items.length;
-   const newItem = this.formBuilder.group({
-    itemId: [itemLength + 1],
-    itemName: [''],
-    itemDesc: ['']
-   });
+  // addNewItem(){
+  //  const itemLength = this.items.length;
+  //  const newItem = this.formBuilder.group({
+  //   itemId: [itemLength + 1],
+  //   itemName: [''],
+  //   itemDesc: ['']
+  //  });
 
-   this.items.push(newItem)
-  }
+  //  this.items.push(newItem)
+  // }
 
 }

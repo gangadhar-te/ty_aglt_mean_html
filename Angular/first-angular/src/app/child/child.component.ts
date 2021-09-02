@@ -8,7 +8,7 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit,OnDestroy,OnChanges,DoCheck {
-  // @Input('loggedIn') loginFlag: boolean = true;
+  @Input() loggedIn: boolean;
   // @Output() wishEvent = new EventEmitter();
   // name = 'Gurunath';
    counter = 0;
