@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
+import { Product } from '../ProductInterface';
 
 @Component({
   selector: 'app-display-product',
@@ -7,8 +8,8 @@ import { ProductService } from '../product.service';
   styleUrls: ['./display-product.component.css']
 })
 export class DisplayProductComponent implements OnInit {
-
-  products = [];
+  isLoading : boolean;
+  products : Product ;
   error:string;
   constructor(private ps:ProductService) { }
 
@@ -17,8 +18,10 @@ export class DisplayProductComponent implements OnInit {
   }
 
   getProducts() {
+    this.isLoading = true;
    this.ps.getAllProducts().subscribe(res => {
      if(!res.error){
+       this.isLoading = false;
       this.products = res.products
      }
      else{

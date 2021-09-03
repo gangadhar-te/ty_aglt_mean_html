@@ -11,4 +11,8 @@ export class ProductService {
   getAllProducts(){
    return this.http.get<any>('https://ty-shop.herokuapp.com/api/products')
   }
+
+  postProducts(form){
+   return this.http.post<any>('https://ty-shop.herokuapp.com/api/products',form)
+  }
 }
