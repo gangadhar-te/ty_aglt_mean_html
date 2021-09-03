@@ -15,4 +15,12 @@ export class ProductService {
   postProducts(form){
    return this.http.post<any>('https://ty-shop.herokuapp.com/api/products',form)
   }
+
+  deleteProduct(id){
+   return this.http.delete<any>(`https://ty-shop.herokuapp.com/api/products/${id}`)
+  }
+
+  updateProduct(product){
+    return this.http.put<any>(`https://ty-shop.herokuapp.com/api/products/${product._id}`,product)
+  }
 }

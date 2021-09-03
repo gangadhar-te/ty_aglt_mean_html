@@ -9,8 +9,11 @@ import { Product } from '../ProductInterface';
 })
 export class DisplayProductComponent implements OnInit {
   isLoading : boolean;
-  products : Product ;
+  products : any ;
+  message:string;
   error:string;
+  selectedProductToEdit:any;
+  productUpdating = false;
   constructor(private ps:ProductService) { }
 
   ngOnInit(): void {
@@ -31,4 +34,51 @@ export class DisplayProductComponent implements OnInit {
      this.error = "Server Error"
    })
   }
+
+  removeProduct(product:Product){
+    this.isLoading = true;
+    const confirmation = confirm("Are you sure to delete the product????")
+    if(confirmation){
+      this.ps.deleteProduct(product._id).subscribe(res => {
+        if(!res.error) {
+          this.isLoading = false;
+          this.products.splice(this.products.indexOf(product),1)
+          this.message = 'Product deleted successfully'
+        }
+        else{
+          this.error = 'Product deletion failed'
+        }
+      },err => {
+        this.error = 'Server Error'
+      })
+    }
+    else{
+      this.isLoading = false;
+    }
+  }
+
+  onEditProduct(product){
+   this.selectedProductToEdit = {...product};
+   console.log(this.selectedProductToEdit);
+
+  }
+
+  onFormSubmit(){
+    this.productUpdating = true;
+    this.isLoading = true;
+    this.ps.updateProduct(this.selectedProductToEdit).subscribe(res => {
+      if(!res.error){
+        this.productUpdating = false;
+        this.isLoading = false;
+        this.message = 'Product updated successfully'
+        this.products.splice(this.products.findIndex(ele => ele._id ===res.response._id),1,res.response)
+      }
+      else{
+        this.error = 'Product updation failed'
+      }
+    },err => {
+      this.error = 'server Error'
+    })
+  }
+
 }
