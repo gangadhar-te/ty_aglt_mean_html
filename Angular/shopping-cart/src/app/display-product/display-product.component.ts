@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../ProductInterface';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-display-product',
@@ -14,7 +15,7 @@ export class DisplayProductComponent implements OnInit {
   error:string;
   selectedProductToEdit:any;
   productUpdating = false;
-  constructor(private ps:ProductService) { }
+  constructor(private ps:ProductService,public auth:AuthService) { }
 
   ngOnInit(): void {
     this.getProducts()

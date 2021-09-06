@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
     this.auth.loginUser(form.value).subscribe(res => {
       if(!res.error){
         console.log(res);
-
         this.isLoading = false;
+        localStorage.setItem("userDetails",JSON.stringify(res))
        this.router.navigate(['./display'])
       }
       else{

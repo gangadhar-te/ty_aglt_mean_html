@@ -20,8 +20,10 @@
 
         </div>
         <div class="card-footer">
-          <button class="btn btn-warning" (click)= "removeProduct(product)">Delete</button>
-          <button class="btn btn-primary" class="btn btn-primary" data-toggle="modal" data-target="#updateProductModal" (click) ="onEditProduct(product)">Edit</button>
+          <button class="btn btn-warning" (click)= "removeProduct(product)"
+          *ngIf = "auth.isLoggedIn() && auth.isAdmin()">Delete</button>
+          <button class="btn btn-primary" class="btn btn-primary" data-toggle="modal" data-target="#updateProductModal" (click) ="onEditProduct(product)"
+          *ngIf = "auth.isLoggedIn() && auth.isAdmin()">Edit</button>
         </div>
 
       </div>

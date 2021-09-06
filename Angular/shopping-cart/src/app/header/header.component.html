@@ -1,27 +1,37 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">AZLT-MART</a>
+   <a class="navbar-brand" href="#">AZLT-MART</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav me-auto  mb-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" routerLink = "display">Products </a>
+        <a class="nav-link" routerLink = "display"
+         *ngIf = "auth.isLoggedIn()">Products </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" routerLink = "add">Add-Product</a>
+        <a class="nav-link" routerLink = "add"
+        *ngIf = "auth.isLoggedIn() && auth.isAdmin()">Add-Product</a>
       </li>
-     <ul class="navbar-nav">
+    </ul>
+     <ul class="navbar-nav ml-auto  mt-lg-0 ">
       <li class="nav-item ">
-        <a class="nav-link active" routerLink = "register"
+        <a class="nav-link active" routerLink = "register" *ngIf = "!auth.isLoggedIn()"
         >Register</a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link active" routerLink = "login"
+        <a class="nav-link active" routerLink = "login" *ngIf = "!auth.isLoggedIn()"
         >Login</a>
       </li>
+      <li class="nav-item ">
+        <a class="nav-link active"
+        (click) = "auth.logout()"
+        style="cursor: pointer;"
+        *ngIf = "auth.isLoggedIn()"
+        >Logout</a>
+      </li>
      </ul>
-    </ul>
+
   </div>
 </nav>
 
