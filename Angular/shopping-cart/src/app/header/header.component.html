@@ -14,6 +14,7 @@
         *ngIf = "auth.isLoggedIn() && auth.isAdmin()">Add-Product</a>
       </li>
     </ul>
+
      <ul class="navbar-nav ml-auto  mt-lg-0 ">
       <li class="nav-item ">
         <a class="nav-link active" routerLink = "register" *ngIf = "!auth.isLoggedIn()"
@@ -31,7 +32,6 @@
         >Logout</a>
       </li>
      </ul>
-
   </div>
 </nav>
 
