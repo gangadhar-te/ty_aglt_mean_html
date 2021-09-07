@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
-import { Product } from '../ProductInterface';
-import { AuthService } from '../auth.service';
+import { Product } from '../ProductInterface'
+import { AuthService } from '../../authorization/auth.service';
 
 @Component({
   selector: 'app-display-product',

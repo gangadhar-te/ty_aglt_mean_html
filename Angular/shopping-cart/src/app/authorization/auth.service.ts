@@ -44,4 +44,9 @@ export class AuthService {
     const userDetails = this.getUserDetails();
     return userDetails && userDetails.role === 'user' ? true : false;
   }
+
+  getToken(){
+    const userDetails = JSON.parse(localStorage.getItem('userDetails'));
+    return userDetails.token;
+  }
 }
