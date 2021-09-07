@@ -13,7 +13,7 @@ import { LoginComponent } from './authorization/login/login.component';
 import { RegisterComponent } from './authorization/register/register.component';
 import { ProductModule } from './productsCRUD/product/product.module';
 import { AuthModule } from './authorization/auth/auth.module';
-// import { AuthorizationInterceptor } from './authorization.interceptor';
+import { AuthorizationInterceptor } from './authorization.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,11 +34,11 @@ import { AuthModule } from './authorization/auth/auth.module';
     AuthModule
   ],
   providers: [
-    // {
-    //   provide:HTTP_INTERCEPTORS,
-    //   useClass:AuthorizationInterceptor,
-    //   multi:true
-    // }
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthorizationInterceptor,
+      multi:true
+    }
   ],
   bootstrap: [AppComponent]
 })
